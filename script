@@ -1,0 +1,20 @@
+# décompresser l'archive gzip
+tar xzvf inf2610-lab0-2.2.tar.gz
+
+# aller dans le répertoire des sources
+cd inf2610-lab0-2.2/
+
+# s'assurer que le script configure soit exécutable
+chmod +x configure
+
+# exécuter le script configure
+./configure
+
+# compiler les sources
+make
+
+# exécuter les tests
+make check
+
+# refaire une archive pour la remise
+make dist
