@@ -1,0 +1,134 @@
+execve("./banque", ["./banque", "--lib", "pthread"], 0x7ffe76758400 /* 79 vars */) = 0
+brk(NULL)                               = 0x18e5000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fbf823c9000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttng/lib/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttng/lib/tls/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttng/lib/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttng/lib/tls", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttng/lib/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttng/lib/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttng/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttng/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/usr/local/cours/INF2610/lttv/lib/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttv/lib/tls/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttv/lib/tls", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttv/lib/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/local/cours/INF2610/lttv/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/opt/cuda-8.0/lib64/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/opt/cuda-8.0/lib64/tls/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/opt/cuda-8.0/lib64/tls", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/opt/cuda-8.0/lib64/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/opt/cuda-8.0/lib64", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/usr/lib64/mpich/lib/tls/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/lib64/mpich/lib/tls/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/tls/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/lib64/mpich/lib/tls", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/x86_64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/lib64/mpich/lib/x86_64", 0x7fffcea761b0) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/libpthread.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+stat("/usr/lib64/mpich/lib", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=383412, ...}) = 0
+mmap(NULL, 383412, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fbf8236b000
+close(3)                                = 0
+open("/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340^\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=153960, ...}) = 0
+mmap(NULL, 2220552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fbf81f86000
+mprotect(0x7fbf81f9f000, 2097152, PROT_NONE) = 0
+mmap(0x7fbf8219f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19000) = 0x7fbf8219f000
+mmap(0x7fbf821a1000, 12808, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fbf821a1000
+close(3)                                = 0
+open("/usr/local/cours/INF2610/lttng/lib/libpth.so.20", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/libpth.so.20", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/libpth.so.20", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/libpth.so.20", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libpth.so.20", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@C\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=82344, ...}) = 0
+mmap(NULL, 2185360, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fbf81d70000
+mprotect(0x7fbf81d82000, 2097152, PROT_NONE) = 0
+mmap(0x7fbf81f82000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x7fbf81f82000
+mmap(0x7fbf81f84000, 6288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fbf81f84000
+close(3)                                = 0
+open("/usr/local/cours/INF2610/lttng/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/libdl.so.2", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\r\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=19496, ...}) = 0
+mmap(NULL, 2109584, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fbf81b6c000
+mprotect(0x7fbf81b6f000, 2093056, PROT_NONE) = 0
+mmap(0x7fbf81d6e000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fbf81d6e000
+close(3)                                = 0
+open("/usr/local/cours/INF2610/lttng/lib/libnsl.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/libnsl.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/libnsl.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/libnsl.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libnsl.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 =\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=115472, ...}) = 0
+mmap(NULL, 2201400, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fbf81952000
+mprotect(0x7fbf81968000, 2097152, PROT_NONE) = 0
+mmap(0x7fbf81b68000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x16000) = 0x7fbf81b68000
+mmap(0x7fbf81b6a000, 5944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fbf81b6a000
+close(3)                                = 0
+open("/usr/local/cours/INF2610/lttng/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/local/cours/INF2610/lttv/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/opt/cuda-8.0/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/usr/lib64/mpich/lib/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\t\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=2182280, ...}) = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fbf82369000
+mmap(NULL, 4016416, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fbf8157d000
+mprotect(0x7fbf81748000, 2097152, PROT_NONE) = 0
+mmap(0x7fbf81948000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1cb000) = 0x7fbf81948000
+mmap(0x7fbf8194e000, 14624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fbf8194e000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fbf82366000
+arch_prctl(ARCH_SET_FS, 0x7fbf82366700) = 0
+mprotect(0x7fbf81948000, 16384, PROT_READ) = 0
+mprotect(0x7fbf81b68000, 4096, PROT_READ) = 0
+mprotect(0x7fbf81d6e000, 4096, PROT_READ) = 0
+mprotect(0x7fbf81f82000, 4096, PROT_READ) = 0
+mprotect(0x7fbf8219f000, 4096, PROT_READ) = 0
+mprotect(0x601000, 4096, PROT_READ)     = 0
+mprotect(0x7fbf823cb000, 4096, PROT_READ) = 0
+munmap(0x7fbf8236b000, 383412)          = 0
+set_tid_address(0x7fbf823669d0)         = 31616
+set_robust_list(0x7fbf823669e0, 24)     = 0
+rt_sigaction(SIGRTMIN, {sa_handler=0x7fbf81f8b960, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7fbf81f983b0}, NULL, 8) = 0
+rt_sigaction(SIGRT_1, {sa_handler=0x7fbf81f8ba00, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7fbf81f983b0}, NULL, 8) = 0
+rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbf80d7c000
+brk(NULL)                               = 0x18e5000
+brk(0x1906000)                          = 0x1906000
+brk(NULL)                               = 0x1906000
+mprotect(0x7fbf80d7c000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fbf8157bff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fbf8157c9d0, tls=0x7fbf8157c700, child_tidptr=0x7fbf8157c9d0) = 31617
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbf8057b000
+mprotect(0x7fbf8057b000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fbf80d7aff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fbf80d7b9d0, tls=0x7fbf80d7b700, child_tidptr=0x7fbf80d7b9d0) = 31618
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbf7fd7a000
+mprotect(0x7fbf7fd7a000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fbf80579ff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fbf8057a9d0, tls=0x7fbf8057a700, child_tidptr=0x7fbf8057a9d0) = 31619
+mmap(NULL, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fbf7f579000
+mprotect(0x7fbf7f579000, 4096, PROT_NONE) = 0
+clone(child_stack=0x7fbf7fd78ff0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7fbf7fd799d0, tls=0x7fbf7fd79700, child_tidptr=0x7fbf7fd799d0) = 31620
+futex(0x7fbf8157c9d0, FUTEX_WAIT, 31617, NULL) = 0
+futex(0x7fbf8057a9d0, FUTEX_WAIT, 31619, NULL) = 0
+write(1, "Start balance:              1000"..., 40) = 40
+write(1, "End balance:                1346"..., 40) = 40
+write(1, "Expected:                   2100"..., 40) = 40
+exit_group(0)                           = ?
++++ exited with 0 +++
