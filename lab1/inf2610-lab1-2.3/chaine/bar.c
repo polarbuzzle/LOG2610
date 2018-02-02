@@ -13,7 +13,9 @@
 #include "whoami.h"
 
 int main(int argc, char **argv) {
+
 	increment_rank();
 	whoami("bar");
+	execlp("baz", "baz", argv[1], argv[2]);
 	return 0;
 }

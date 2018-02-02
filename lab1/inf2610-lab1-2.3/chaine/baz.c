@@ -13,7 +13,21 @@
 #include "whoami.h"
 
 int main(int argc, char **argv) {
+
+	int n = atoi(argv[1]);
+	int ctr = atoi(argv[2]);
+
+	if (ctr == n) {
+		exit(0);
+	}
+
+	ctr++;
+
+	char* argument;;	
+	asprintf(&argument, "%d", ctr);
+
 	increment_rank();
 	whoami("baz");
+	execlp("foo", "foo", argv[1], argument);
 	return 0;
 }
