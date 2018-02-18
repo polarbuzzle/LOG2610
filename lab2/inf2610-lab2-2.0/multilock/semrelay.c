@@ -20,9 +20,12 @@ void *semrelay_worker(void * data) {
     unsigned long i, j;
     struct experiment * exp_data = data;
 
+    
     // TODO: protection de la boucle interne par un semrelay
     for (i = 0; i < exp_data->outer; i++) {
-        sem_wait(exp_data->lock);
+        
+        sem_t* temp = exp_data->lock;
+        sem_wait(&temp[exp_data->rank]);
         for (j = 0; j < exp_data->inner; j++) {
             /* En mode instable, le thread au rang 0 peut être tué aléatoirement */
             if (j == 0 && exp_data->unstable && exp_data->rank == 0) {
@@ -32,21 +35,24 @@ void *semrelay_worker(void * data) {
             unsigned long idx = (i * exp_data->inner) + j;
             statistics_add_sample(exp_data->data, (double) idx);
         }
-        sem_post(exp_data->lock);
+        if(exp_data->rank+1 != exp_data->nr_thread)
+            sem_post(&temp[(exp_data->rank)+1]);
+        else
+            sem_post(&temp[0]);
     }
     return NULL;
 }
 
 void semrelay_initialization(struct experiment * exp_data) {
-    int nRep = exp_data->nr_thread;
+    int n = exp_data->nr_thread;
 
     exp_data->data = make_statistics();
     
     // TODO: allocation d'un tableau de sémaphores sem_t dans exp_data->lock
-    sem_t* temp = malloc(sizeof(sem_t)*nRep);
+    sem_t* temp = (sem_t*) malloc(sizeof(sem_t)*n);
     // TODO: initialisation des sémaphores
     sem_init(temp, 0, 1);
-    for (int i = 1; i < nRep; i++) {
+    for (int i = 1; i < n; i++) {
         sem_init(&temp[i], 0, 0);
     }
 
@@ -65,9 +71,8 @@ void semrelay_destroy(struct experiment * exp_data) {
     sem_t* temp = exp_data->lock;
     for(int i = 0; i < n; i++){
         sem_destroy(&temp[i]);
-        free(&temp[i]);
     }
-    
+    free(temp);
 
 }
 

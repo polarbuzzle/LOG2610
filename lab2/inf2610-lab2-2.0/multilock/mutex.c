@@ -55,7 +55,7 @@ void mutex_destroy(struct experiment * exp_data) {
     pthread_mutex_destroy(exp_data->lock);
 
     // TODO: liberation de la memoire du verrou
-    free(exp_data->lock);
+    free((pthread_mutex_t*)exp_data->lock);
 }
 
 
