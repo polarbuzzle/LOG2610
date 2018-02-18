@@ -22,14 +22,12 @@ int main(int argc, char **argv) {
      * TODO: Creer un tube, puis le remplir octet par octet a l'infini
      */
     if (pipe(fds) == -1) { printf("fok\n"); }
-    close(fds[READ]);
-    while(write(fds[WRITE], &c, sizeof(c)) >= 0 ) {
+    // close(fds[READ]);
+    while(write(fds[WRITE], &c, sizeof(c)) != 0 ) {
         i++;
         printf("%d\n", i);
     }
-
-
-
+    
 
     return 0;
 }
