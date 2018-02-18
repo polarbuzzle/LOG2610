@@ -43,9 +43,9 @@ void * worker_foo(void *data)
 
         // TODO 2.1: prendre les locks de manière à provoquer un interblocage
         pthread_mutex_lock(&lock_one);
+        pthread_barrier_wait(&barrier);
         pthread_mutex_lock(&lock_two);
-        // TODO 2.3: forcer l'interblocage avec la barriere
-       pthread_barrier_wait(&barrier);
+        // TODO 2.3: forcer l'interblocage avec la barriere  
 
         x = ++y;
         printf("foo %d\n", x);
@@ -65,11 +65,11 @@ void * worker_bar(void *data)
 
         // TODO 2.1: prendre les locks de manière à provoquer un interblocage
         pthread_mutex_lock(&lock_two);
+        pthread_barrier_wait(&barrier);
         pthread_mutex_lock(&lock_one);
 
         // TODO 2.3: forcer l'interblocage avec la barriere
-       pthread_barrier_wait(&barrier);
-
+       
         x = ++y;
         printf("bar %d\n", x);
 
@@ -101,7 +101,7 @@ static void watchdog(int signr)
 
     // TODO 2.2: Si un interblocage est détecté, alors faire appel à exit(0)
     printf("watchdog\n");
-    if(signr) exit(0);
+    exit(0);
 }
 
 /*
