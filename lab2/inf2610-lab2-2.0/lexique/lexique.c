@@ -93,8 +93,8 @@ void handle_quit(int signum) {
     if (started) {
         // TODO: Envoyer un long == -1 sur fd_word_len pour que task_frequency()
         //       imprime les resultats
-        int i = -1;
-        write(fd_word_len[READ], &i, sizeof(int)); // en attendant WOILYY
+        long i = -1;
+        write(fd_word_len[WRITE], &i, sizeof(long)); // en attendant 
     }
     exit(0);
 }
@@ -132,7 +132,6 @@ int main(int argc, char **argv) {
         break;
     default:
         // TODO: Fermer les descripteurs qui ne sont plus requis dans le parent
-        close(fd_word_len[WRITE]);
         close(fd_word_str[WRITE]);
 
         break;
