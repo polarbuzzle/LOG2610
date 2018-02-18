@@ -102,6 +102,7 @@ void task_tokenize(int in, int out_length, int out_string) {
     GRegex *re;
     GError *err = NULL;
     struct buffer *recv = make_buffer(100);
+    int stopMsg;
 
     re = g_regex_new("[0-9 \t\n\'\".,]*([a-zA-Z]+)[0-9 \t\n\'\".,]*", 0, 0, &err);
     if (!re) {
@@ -124,6 +125,8 @@ void task_tokenize(int in, int out_length, int out_string) {
         tokenize(re, recv, out_length, out_string);
     }
     out:
+    stopMsg = -1;
+    write(out_length, &stopMsg, sizeof(stopMsg));
     free_buffer(recv);
     g_regex_unref(re);
     return;

@@ -42,16 +42,17 @@ void * worker_foo(void *data)
         random_hog();
 
         // TODO 2.1: prendre les locks de manière à provoquer un interblocage
-
-
+        pthread_mutex_lock(&lock_one);
+        pthread_mutex_lock(&lock_two);
         // TODO 2.3: forcer l'interblocage avec la barriere
-
+       pthread_barrier_wait(&barrier);
 
         x = ++y;
         printf("foo %d\n", x);
 
         // TODO 2.1: relacher les locks
-
+        pthread_mutex_unlock(&lock_one);
+        pthread_mutex_unlock(&lock_two);
 
     }
     return NULL;
@@ -63,16 +64,18 @@ void * worker_bar(void *data)
         random_hog();
 
         // TODO 2.1: prendre les locks de manière à provoquer un interblocage
-
+        pthread_mutex_lock(&lock_two);
+        pthread_mutex_lock(&lock_one);
 
         // TODO 2.3: forcer l'interblocage avec la barriere
-
+       pthread_barrier_wait(&barrier);
 
         x = ++y;
         printf("bar %d\n", x);
 
         // TODO 2.1: relacher les locks
-
+        pthread_mutex_unlock(&lock_two);
+        pthread_mutex_unlock(&lock_one);
 
     }
     return NULL;
@@ -98,6 +101,7 @@ static void watchdog(int signr)
 
     // TODO 2.2: Si un interblocage est détecté, alors faire appel à exit(0)
     printf("watchdog\n");
+    if(signr) exit(0);
 }
 
 /*
@@ -139,7 +143,8 @@ int main(int argc, char **argv)
     init_seed();
 
     // TODO 2.1: initialiser lock_one et lock_two
-
+    pthread_mutex_init(&lock_one, NULL);
+    pthread_mutex_init(&lock_two, NULL);
 
     // Initialisation de la barriere
     pthread_barrier_init(&barrier, NULL, 2);
@@ -158,7 +163,8 @@ int main(int argc, char **argv)
     timer_stop();
 
     // TODO 2.1: destruction des verrous lock_one et lock_two
-
+    pthread_mutex_destroy(&lock_one);
+    pthread_mutex_destroy(&lock_two);
 
     printf("done\n");
     return 0;
