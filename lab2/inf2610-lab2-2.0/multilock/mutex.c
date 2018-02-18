@@ -25,8 +25,10 @@ void * mutex_worker(void * data) {
         for (j = 0; j < exp_data->inner; j++) {
             /* En mode instable, le thread au rang 0 peut être tué aléatoirement */
             if (j == 0 && exp_data->unstable && exp_data->rank == 0) {
-                if (rand() / RAND_MAX < 0.1)
+                if (rand() / RAND_MAX < 0.1) {
+                    pthread_mutex_unlock(exp_data->lock);
                     pthread_exit(NULL);
+                }
             }
             unsigned long idx = (i * exp_data->inner) + j;
             statistics_add_sample(exp_data->data, (double) idx);
