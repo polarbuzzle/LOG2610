@@ -42,7 +42,7 @@ void spinlock_initialization(struct experiment * exp_data) {
     exp_data->data = make_statistics();
 
     // TODO: allocation d'un long dans exp_data->lock
-    int* temp = malloc(sizeof(long));
+    long* temp = (long*) malloc(sizeof(long));
     // TODO: initialisation à zéro
     *temp = 0;
     exp_data->lock = temp;
@@ -53,6 +53,6 @@ void spinlock_destroy(struct experiment * exp_data) {
     free(exp_data->data);
 
     // TODO: liberation de la memoire du verrou
-    free(exp_data->lock);
+    free((long*) exp_data->lock);
 }
 
