@@ -18,6 +18,7 @@
 
 volatile int x;
 volatile int y;
+volatile int ancienX = -1;
 
 pthread_mutex_t lock_one;
 pthread_mutex_t lock_two;
@@ -100,8 +101,12 @@ static void watchdog(int signr)
     (void) signr;
 
     // TODO 2.2: Si un interblocage est détecté, alors faire appel à exit(0)
-    printf("watchdog\n");
-    exit(0);
+    if(ancienX == x) {
+        printf("watchdog\n");
+        exit(0);
+    } else {
+        ancienX = x;
+    }
 }
 
 /*
