@@ -25,9 +25,8 @@ int main(int argc, char **argv) {
 
 	char* argument;;	
 	asprintf(&argument, "%d", ctr);
-
 	increment_rank();
 	whoami("baz");
-	execlp("foo", "foo", argv[1], argument);
+	execlp("foo", "foo", argv[1], argument, NULL);
 	return 0;
 }

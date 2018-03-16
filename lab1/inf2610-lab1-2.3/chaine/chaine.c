@@ -33,9 +33,9 @@ int main(int argc, char **argv) {
 	// Exécution de n cycles foo bar baz
 	//int i;
 	//for (i = 0; i < n; i++) {
-	char* argument;;
+	char* argument;
 	asprintf(&argument, "%d", n);
-	execlp("baz", "baz", argument, "0");
+	execlp("baz", "baz", argument, "0", NULL);
 	// execlp("foo", "foo", NULL);
 	// execlp("bar", "bar", NULL);
 	//}
