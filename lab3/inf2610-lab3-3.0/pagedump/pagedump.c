@@ -24,6 +24,13 @@ void save_page(char *fname, void *ptr) {
      * 3 - écrire la page dans le fichier
      * 4 - fermer le fichier
      */
+    int add = ptr;
+    int offset = add % 0x2000 - 1; // Calcule avec la commande dan le tp
+    ptr -= offset;  
+    
+    int fd = open(fname, O_CREAT | O_WRONLY | 0666);
+    write(fd, ptr, 0x2000);
+    close(fd);
 
     return;
 }

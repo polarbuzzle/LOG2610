@@ -33,6 +33,8 @@ void memory_scan(void *data, int direction) {
     volatile char bidon = 0; (void) bidon;
     char *start = (char *) data; (void) start;
 
+    offset = 0;
+
     printf("direction=%d\n", direction);
 
     /* TODO: Lire, octet par octet, jusqu'à la réception du signal SIGSEGV.
@@ -46,6 +48,15 @@ void memory_scan(void *data, int direction) {
      * Lecture seulement de la mémoire. Si le balayage écrase de la mémoire
      * utile au programme, alors il se peut que son comportement soit modifié.
      */
+    printf("Start: %p\n", start);
+    while(1) {
+        if (direction == 1)
+            addr = start + offset++;
+        else if (direction == -1)
+            addr = start + offset--;
+        __sync_synchronize();
+        bidon = *addr;
+    }
 
     printf("No segfault!\n");
     return;
@@ -75,10 +86,12 @@ int main(int argc, char **argv) {
     }
 
     // TODO: enregister fonction segfault_handler au signal SIGSEGV
+    signal(SIGSEGV, segfault_handler);
 
     save_maps(-1);
 
     // TODO: appel à memory_scan()
+    memory_scan(myptr, dir);
 
     printf("done\n");
     return 0;
